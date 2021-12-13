@@ -6,13 +6,12 @@ import Navbar from "../../components/Navbar";
 const Cats = () => {
 	const [cats, setCats] = useState([]);
 
-	const fetchCats = async () => {
-		const res = await fetch("/api/cats");
-		const data = await res.json();
-		setCats(data.cats);
-	};
-
 	useEffect(() => {
+		const fetchCats = async () => {
+			const res = await fetch("/api/cats");
+			const data = await res.json();
+			setCats(data.cats);
+		};
 		fetchCats();
 	}, []);
 
