@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import Card from "../../components/Card";
-import Navbar from "../../components/Navbar";
 
 const Cats = () => {
 	const [cats, setCats] = useState([]);
@@ -16,12 +15,9 @@ const Cats = () => {
 	}, []);
 
 	return (
-		<>
-			<Navbar />
-			<div className="container d-flex justify-content-center align-items-center flex-wrap">
-				{cats.length > 0 ? cats.map(cat => <Card cat={cat} key={cat.id} />) : "Loading..."}
-			</div>
-		</>
+		<div className="container d-flex justify-content-center align-items-center flex-wrap">
+			{cats.length > 0 ? cats.map(cat => <Card cat={cat} key={cat.id} />) : "Loading..."}
+		</div>
 	);
 };
 

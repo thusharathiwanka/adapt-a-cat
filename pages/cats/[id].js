@@ -19,16 +19,16 @@ const Cat = () => {
 		fetchCat();
 	}, [id]);
 
-	return (
-		cat && (
-			<div className="container d-flex">
-				<Image src={cat.image.url} alt={cat.image.alt} width={600} height={800} />
-				<div className="mx-5">
-					<h1>{cat.name}</h1>
-					<p>{cat.description}</p>
-				</div>
+	return cat ? (
+		<div className="container d-flex">
+			<Image src={cat.image.url} alt={cat.image.alt} width={600} height={800} />
+			<div className="mx-5">
+				<h1>{cat.name}</h1>
+				<p>{cat.description}</p>
 			</div>
-		)
+		</div>
+	) : (
+		"Loading..."
 	);
 };
 
