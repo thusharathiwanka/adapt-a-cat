@@ -1,8 +1,15 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Card = ({ cat }) => {
+	const router = useRouter();
+
 	return (
-		<div className="card m-4" style={{ width: "15rem" }}>
+		<div
+			className="card m-4"
+			style={{ width: "15rem" }}
+			onClick={() => router.push(`cats/${cat.id}`)}
+		>
 			<Image
 				className="card-img-top"
 				src={cat.image.url}
