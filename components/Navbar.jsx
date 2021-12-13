@@ -1,9 +1,9 @@
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
+		<nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
 			<div className="container-md">
 				<a className="navbar-brand" href="#">
-					Navbar
+					Adopt a Cat
 				</a>
 			</div>
 		</nav>
