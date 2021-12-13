@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 const Cat = () => {
@@ -21,6 +22,9 @@ const Cat = () => {
 
 	return cat ? (
 		<div className="container d-flex">
+			<Head>
+				<title>Cats | {cat.name}</title>
+			</Head>
 			<Image src={cat.image.url} alt={cat.image.alt} width={600} height={800} />
 			<div className="mx-5">
 				<h1>{cat.name}</h1>
