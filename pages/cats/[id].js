@@ -21,16 +21,23 @@ const Cat = () => {
 	}, [id]);
 
 	return cat ? (
-		<div className="container d-flex justify-content-center mt-5 align-items-center">
-			<Head>
-				<title>Cats | {cat.name}</title>
-			</Head>
-			<Image src={cat.image.url} alt={cat.image.alt} width={1600} height={2400} />
-			<div className="mx-5">
-				<h1>{cat.name}</h1>
-				<p>{cat.description}</p>
+		<>
+			<div className="container d-flex justify-content-center mt-5 align-items-center">
+				<Head>
+					<title>Cats | {cat.name}</title>
+				</Head>
+				<Image src={cat.image.url} alt={cat.image.alt} width={1600} height={2400} />
+				<div className="mx-5">
+					<h1>{cat.name}</h1>
+					<p>{cat.description}</p>
+				</div>
 			</div>
-		</div>
+			<div className="text-center mt-5">
+				<button type="button" className="btn btn-primary" onClick={() => router.push("/cats")}>
+					Back to Cats
+				</button>
+			</div>
+		</>
 	) : (
 		"Loading..."
 	);
